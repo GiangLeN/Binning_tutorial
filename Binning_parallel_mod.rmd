@@ -1092,8 +1092,6 @@ for i in `cat FileLists/Samples`; do mkdir 3_DASTool/${i}; done
 #run DAS, if we already have the proteins we can add ``--proteins 3_DASTool/${i}_${i}_proteins.faa``
 for i in `cat FileLists/Samples`; do DAS_Tool -i 2_binning/${i}/Metabat/Metabat_contig_list.txt,2_binning/${i}/Maxbin/Maxbin_contig_list.txt -l Metabat,Maxbin -c ../0_assembly_and_reads/2_assembly/${i}/${i}_contigs_2500.fna --db_directory /opt/biolinux/DAS_Tool -o 3_DASTool/${i}/DASTool_${i} --write_bins 1 -t 2; done
 
-for i in `cat FileLists/Samples`; do DAS_Tool -i 2_binning/${i}/Metabat/Metabat_contig_list.txt,2_binning/${i}/Maxbin/Maxbin_contig_list.txt -l Metabat,Maxbin -c ../0_assembly_and_reads/2_assembly/${i}/${i}_contigs_2500.fna --db_directory /opt/biolinux/DAS_Tool -o 3_DASTool/${i}/DASTool_${i} --write_bins 1 -t 2; done
-
 
 #gzip the protein files, since they can get rather large
 gzip 3_DASTool/*/*_proteins.faa
